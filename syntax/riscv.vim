@@ -9,7 +9,7 @@ syntax keyword riscvInstruction div divu
 syntax keyword riscvInstruction ecall ebreak
 syntax keyword riscvInstruction fence fence.i
 syntax keyword riscvInstruction jal jalr
-syntax keyword riscvInstruction lb lbu lh lhu lw
+syntax keyword riscvInstruction lb lbu lh lhu lw ld
 syntax keyword riscvInstruction lui
 syntax keyword riscvInstruction mul mulh mulhsu mulhu
 syntax keyword riscvInstruction or ori
