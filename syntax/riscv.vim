@@ -4,7 +4,7 @@ endif
 
 " Keywords
 syntax keyword riscvInstruction add addi and andi
-syntax keyword riscvInstruction beq bge bgeu blt bltu bne
+syntax keyword riscvInstruction beq bge bgeu blt bltu bne ble bgt 
 syntax keyword riscvInstruction div divu
 syntax keyword riscvInstruction ecall ebreak
 syntax keyword riscvInstruction fence fence.i
@@ -60,8 +60,10 @@ syntax match riscvDirective "\.zero"
 syntax match riscvLabel "^\s*\w\+:"
 
 " Comments
-syntax match riscvComment "#.*$"
-syntax match riscvComment "//.*$"
+syntax match riscvComment "# .*$"
+
+" Heading
+syntax match riscvHeading "##.*$"
 
 " Numbers
 syntax match riscvNumber "\<[-]\?\d\+\>"
@@ -87,5 +89,6 @@ hi riscvLabel       ctermfg=218  " bright orchid
 hi riscvComment     ctermfg=146  " light slate
 hi riscvNumber      ctermfg=158  "ice blue was 195
 hi riscVReturn      ctermfg=116  " bright teal
+hi riscvHeading     ctermfg=205
 
 let b:current_syntax = "riscv"
