@@ -8,7 +8,9 @@ syntax keyword riscvInstruction beq bge bgeu blt bltu bne ble bgt
 syntax keyword riscvInstruction div divu
 syntax keyword riscvInstruction ecall ebreak
 syntax keyword riscvInstruction fence fence.i
-syntax keyword riscvInstruction jal jalr
+syntax keyword riscvInstruction jal nextgroup=riscVFunctionName skipwhite
+syntax keyword riscvInstruction jalr nextgroup=riscVFunctionName skipwhite
+syntax keyword riscvInstruction call nextgroup=riscVFunctionName skipwhite
 syntax keyword riscvInstruction lb lbu lh lhu lw ld
 syntax keyword riscvInstruction lui
 syntax keyword riscvInstruction mul mulh mulhsu mulhu
@@ -22,8 +24,11 @@ syntax keyword riscVInstruction mv li
 
 " Return and Jump
 syntax keyword riscVReturn ret
-syntax keyword riscVReturn j
+"syntax keyword riscVReturn j
+syntax keyword riscVReturn j nextgroup=riscVFunctionName skipwhite
 
+" Function name
+syntax match riscVFunctionName /\<[A-Za-z_][A-Za-z0-9_]*\>/ contained
 
 " Registers (after first register pattern)
 syntax keyword riscvRegister zero ra sp gp tp
@@ -89,6 +94,6 @@ hi riscvLabel       ctermfg=218  " bright orchid
 hi riscvComment     ctermfg=146  " light slate
 hi riscvNumber      ctermfg=158  "ice blue was 195
 hi riscVReturn      ctermfg=116  " bright teal
-hi riscvHeading     ctermfg=205
-
+hi riscvHeading     ctermfg=205  "bright pink
+hi riscVFunctionName ctermfg=218
 let b:current_syntax = "riscv"
