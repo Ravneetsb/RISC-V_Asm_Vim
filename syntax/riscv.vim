@@ -17,7 +17,7 @@ syntax keyword riscvInstruction mul mulh mulhsu mulhu
 syntax keyword riscvInstruction or ori
 syntax keyword riscvInstruction rem remu
 syntax keyword riscvInstruction sb sh sw sd
-syntax keyword riscvInstruction sll slli slt slti sltiu sltu sra srai srl srli
+syntax keyword riscvInstruction sll slli slt slti sltiu sltu sra srai srl srli sllw sraw srlw
 syntax keyword riscvInstruction sub
 syntax keyword riscvInstruction xor xori
 syntax keyword riscVInstruction mv li
